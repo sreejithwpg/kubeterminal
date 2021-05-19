@@ -14,9 +14,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	cache "github.com/KubeOperator/webkubectl/gotty/cache/token"
-	"github.com/KubeOperator/webkubectl/gotty/pkg/randomstring"
-	"github.com/KubeOperator/webkubectl/gotty/webtty"
+	cache "github.com/sreejithwpg/kubeterminal/gotty/cache/token"
+	"github.com/sreejithwpg/kubeterminal/gotty/pkg/randomstring"
+	"github.com/sreejithwpg/kubeterminal/gotty/webtty"
 	"github.com/gorilla/websocket"
 	"github.com/pkg/errors"
 )

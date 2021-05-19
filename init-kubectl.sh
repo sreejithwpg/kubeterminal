@@ -21,9 +21,9 @@ export HOME=/nonexistent
 if [ -z "${arg2}" ]; then
     echo $arg1| base64 -d > .kube/config
 else
-    echo `kubectl config set-credentials webkubectl-user --token=${arg2}` > /dev/null 2>&1
+    echo `kubectl config set-credentials kubeterminal-user --token=${arg2}` > /dev/null 2>&1
     echo `kubectl config set-cluster kubernetes --server=${arg1}` > /dev/null 2>&1
-    echo `kubectl config set-context kubernetes --cluster=kubernetes --user=webkubectl-user` > /dev/null 2>&1
+    echo `kubectl config set-context kubernetes --cluster=kubernetes --user=kubeterminal-user` > /dev/null 2>&1
     echo `kubectl config use-context kubernetes` > /dev/null 2>&1
 fi
 

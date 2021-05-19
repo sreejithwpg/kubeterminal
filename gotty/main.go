@@ -9,9 +9,9 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/KubeOperator/webkubectl/gotty/backend/localcommand"
-	"github.com/KubeOperator/webkubectl/gotty/server"
-	"github.com/KubeOperator/webkubectl/gotty/utils"
+	"github.com/sreejithwpg/kubeterminal/gotty/backend/localcommand"
+	"github.com/sreejithwpg/kubeterminal/gotty/server"
+	"github.com/sreejithwpg/kubeterminal/gotty/utils"
 	"github.com/urfave/cli/v2"
 )
 
@@ -90,7 +90,7 @@ func main() {
 
 		ctx, cancel := context.WithCancel(context.Background())
 		gCtx, gCancel := context.WithCancel(context.Background())
-		log.Println("Welcome to use webkubectl.")
+		log.Println("Welcome to use kubeterminal.")
 		log.Printf("GoTTY is starting with command: %s", strings.Join(c.Args().Slice(), " "))
 
 		errs := make(chan error, 1)

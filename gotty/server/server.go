@@ -15,16 +15,16 @@ import (
 	noesctmpl "text/template"
 	"time"
 
-	"github.com/KubeOperator/webkubectl/gotty/cache/token"
-	"github.com/KubeOperator/webkubectl/gotty/pkg/randomstring"
-	"github.com/KubeOperator/webkubectl/gotty/webtty"
+	"github.com/sreejithwpg/kubeterminal/gotty/cache/token"
+	"github.com/sreejithwpg/kubeterminal/gotty/pkg/randomstring"
+	"github.com/sreejithwpg/kubeterminal/gotty/webtty"
 	"github.com/NYTimes/gziphandler"
 	"github.com/elazarl/go-bindata-assetfs"
 	"github.com/go-redis/redis/v8"
 	"github.com/gorilla/websocket"
 	"github.com/pkg/errors"
 
-	"github.com/KubeOperator/webkubectl/gotty/pkg/homedir"
+	"github.com/sreejithwpg/kubeterminal/gotty/pkg/homedir"
 )
 
 // Server provides a webtty HTTP endpoint.
@@ -83,7 +83,7 @@ func New(factory Factory, options *Options, redisOptions *RedisOptions) (*Server
 	if redisOptions.UseRedisTokenCache == "true" {
 		log.Println("Use redis to store token: ", redisOptions.Addr)
 		client := redis.NewClient(redisOptions.Convert())
-		cache = token.NewRedisCache(client, "kubeoperator-webkubectl-")
+		cache = token.NewRedisCache(client, "kubeoperator-kubeterminal-")
 	} else {
 		cache = token.NewMemCache()
 	}

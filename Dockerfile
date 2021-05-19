@@ -30,13 +30,13 @@ RUN ARCH=$(uname -m) && case $ARCH in aarch64) ARCH="arm64";; x86_64) ARCH="amd6
     curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash && \
     chmod +x /usr/bin/gotty && chmod 555 /bin/busybox && \
     apk del git curl && rm -rf /tmp/* /var/tmp/* /var/cache/apk/* && \
-    chmod -R 755 /tmp && mkdir -p /opt/webkubectl
+    chmod -R 755 /tmp && mkdir -p /opt/kubeterminal
 
 COPY vimrc.local /etc/vim
-COPY start-webkubectl.sh /opt/webkubectl
-COPY start-session.sh /opt/webkubectl
-COPY init-kubectl.sh /opt/webkubectl
-RUN chmod -R 700 /opt/webkubectl /usr/bin/gotty
+COPY start-kubeterminal.sh /opt/kubeterminal
+COPY start-session.sh /opt/kubeterminal
+COPY init-kubectl.sh /opt/kubeterminal
+RUN chmod -R 700 /opt/kubeterminal /usr/bin/gotty
 
 
 ENV SESSION_STORAGE_SIZE=10M
@@ -44,4 +44,4 @@ ENV WELCOME_BANNER="Welcome to Web Kubectl, try kubectl --help."
 ENV KUBECTL_INSECURE_SKIP_TLS_VERIFY=true
 ENV GOTTY_OPTIONS="--port 8080 --permit-write --permit-arguments"
 
-CMD ["sh","/opt/webkubectl/start-webkubectl.sh"]
+CMD ["sh","/opt/kubeterminal/start-kubeterminal.sh"]

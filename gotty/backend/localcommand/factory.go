@@ -4,7 +4,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/KubeOperator/webkubectl/gotty/server"
+	"github.com/sreejithwpg/kubeterminal/gotty/server"
 )
 
 //Options : close options

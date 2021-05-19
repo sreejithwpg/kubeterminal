@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/KubeOperator/webkubectl/gotty/webtty"
+	"github.com/sreejithwpg/kubeterminal/gotty/webtty"
 )
 
 // Slave is webtty.Slave with some additional methods.

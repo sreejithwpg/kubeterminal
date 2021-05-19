@@ -1,4 +1,4 @@
-module github.com/KubeOperator/webkubectl/gotty
+module github.com/sreejithwpg/kubeterminal/gotty
 
 go 1.15
 
